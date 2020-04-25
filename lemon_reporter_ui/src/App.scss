@@ -1,0 +1,148 @@
+.app {
+    height: 100vh;
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: 256px 1fr;
+    grid-column-gap: 1px;
+    font-size: 1.15rem;
+
+    .sidebar {
+        width: 256px;
+        border-right: 1px solid #edeef0;
+        background-color: white;
+
+        .content {
+            transition: margin-left 0.35s ease-in-out, left 0.35s ease-in-out;
+            background: #fff;
+
+            .link-toggle-content,
+            .link-toggle {
+                display: block;
+                &:hover {
+                    color: #000;
+                    font-weight: 600;
+                }
+                outline: none;
+                border: none;
+                position: relative;
+                padding: 0.625rem 1.5rem 0.625rem 2.75rem;
+                color: #6c757d;
+                background: #fff;
+                font-weight: 400;
+
+                text-decoration: none;
+                cursor: pointer;
+
+                background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.25 7.625C5.49061 7.625 4.875 7.00939 4.875 6.25C4.875 5.49061 5.49061 4.875 6.25 4.875C7.00939 4.875 7.625 5.49061 7.625 6.25C7.625 7.00939 7.00939 7.625 6.25 7.625ZM11.75 7.625C10.9906 7.625 10.375 7.00939 10.375 6.25C10.375 5.49061 10.9906 4.875 11.75 4.875C12.5094 4.875 13.125 5.49061 13.125 6.25C13.125 7.00939 12.5094 7.625 11.75 7.625ZM6.25 13.125C5.49061 13.125 4.875 12.5094 4.875 11.75C4.875 10.9906 5.49061 10.375 6.25 10.375C7.00939 10.375 7.625 10.9906 7.625 11.75C7.625 12.5094 7.00939 13.125 6.25 13.125ZM11.75 13.125C10.9906 13.125 10.375 12.5094 10.375 11.75C10.375 10.9906 10.9906 10.375 11.75 10.375C12.5094 10.375 13.125 10.9906 13.125 11.75C13.125 12.5094 12.5094 13.125 11.75 13.125ZM1.4375 6.9375C1.0578 6.9375 0.75 6.6297 0.75 6.25C0.75 5.8703 1.0578 5.5625 1.4375 5.5625C1.8172 5.5625 2.125 5.8703 2.125 6.25C2.125 6.6297 1.8172 6.9375 1.4375 6.9375ZM1.4375 12.4375C1.0578 12.4375 0.75 12.1297 0.75 11.75C0.75 11.3703 1.0578 11.0625 1.4375 11.0625C1.8172 11.0625 2.125 11.3703 2.125 11.75C2.125 12.1297 1.8172 12.4375 1.4375 12.4375ZM16.5625 6.9375C16.1828 6.9375 15.875 6.6297 15.875 6.25C15.875 5.8703 16.1828 5.5625 16.5625 5.5625C16.9422 5.5625 17.25 5.8703 17.25 6.25C17.25 6.6297 16.9422 6.9375 16.5625 6.9375ZM16.5625 12.4375C16.1828 12.4375 15.875 12.1297 15.875 11.75C15.875 11.3703 16.1828 11.0625 16.5625 11.0625C16.9422 11.0625 17.25 11.3703 17.25 11.75C17.25 12.1297 16.9422 12.4375 16.5625 12.4375ZM6.25 2.125C5.8703 2.125 5.5625 1.8172 5.5625 1.4375C5.5625 1.0578 5.8703 0.75 6.25 0.75C6.6297 0.75 6.9375 1.0578 6.9375 1.4375C6.9375 1.8172 6.6297 2.125 6.25 2.125ZM11.75 2.125C11.3703 2.125 11.0625 1.8172 11.0625 1.4375C11.0625 1.0578 11.3703 0.75 11.75 0.75C12.1297 0.75 12.4375 1.0578 12.4375 1.4375C12.4375 1.8172 12.1297 2.125 11.75 2.125ZM6.25 17.25C5.8703 17.25 5.5625 16.9422 5.5625 16.5625C5.5625 16.1828 5.8703 15.875 6.25 15.875C6.6297 15.875 6.9375 16.1828 6.9375 16.5625C6.9375 16.9422 6.6297 17.25 6.25 17.25ZM11.75 17.25C11.3703 17.25 11.0625 16.9422 11.0625 16.5625C11.0625 16.1828 11.3703 15.875 11.75 15.875C12.1297 15.875 12.4375 16.1828 12.4375 16.5625C12.4375 16.9422 12.1297 17.25 11.75 17.25Z' fill='%231A051D'/%3E%3C/svg%3E");
+                background-repeat: no-repeat;
+                background-position: left 1rem center;
+            }
+
+            .link-toggle-content {
+                background: none;
+                padding: 0.625rem 1.5rem 0.625rem 3.625rem;
+            }
+        }
+        .app-logo {
+            width: 79px;
+            height: 22px;
+            padding: 1.15rem 1.5rem;
+            display: block;
+        }
+    }
+
+    .body {
+        display: grid;
+        grid-template-rows: 67px 1fr;
+        .header {
+            width: calc(100vw - 256px);
+            display: sticky;
+            border-bottom: 1px solid #edeef0;
+            box-shadow: 0 0 2rem 0 rgba(53, 64, 82, 0.1);
+            background-color: white;
+        }
+        .content {
+            .overflow-wrapper {
+                width: calc(100vw - 256px);
+                overflow: auto;
+            }
+            padding: 2.5rem;
+            .h3 {
+                margin-bottom: 1rem;
+            }
+            .table {
+                padding-right: 2.5rem;
+                width: fit-content;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                background-color: white;
+
+                .name,
+                .date {
+                    width: 200px;
+                }
+
+                .money,
+                .day {
+                    width: 70px;
+                    background-color: #edeef0;
+                    border-radius: 4px;
+                }
+
+                .name + .money,
+                .date + .day {
+                    margin-left: 20px;
+                }
+
+                .money + .money,
+                .day + .day {
+                    margin-left: 5px;
+                }
+                .money,
+                .name,
+                .date,
+                .day {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                }
+
+                .table-header {
+                    display: flex;
+                    height: 71px;
+
+                    padding: 1rem;
+                    .month-input {
+                        width: 32px;
+                    }
+                }
+                .table-body {
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 1rem;
+                    .row {
+                        display: flex;
+                    }
+                    .row + .row {
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
+.h3 {
+    font-size: 1.3125rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #000;
+    margin: 0;
+}
